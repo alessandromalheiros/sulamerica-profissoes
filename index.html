@@ -3,6 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="O único Plano de Saúde + Seguro de Vida do mercado para profissionais liberais. Até 50% mais barato que planos tradicionais. Contratação por CNPJ. Rede Einstein, Sírio-Libanês e Rede D'Or.">
+<meta name="keywords" content="plano de saúde profissionais liberais, SulAmérica Profissões, plano de saúde médicos, plano de saúde advogados, plano de saúde engenheiros, seguro de vida profissional, plano empresarial CNPJ">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Vortex Corretagem de Seguros">
+
+<!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://profissoes.vortexseguros.com">
+<meta property="og:title" content="SulAmérica Profissões | Plano de Saúde + Seguro de Vida para Profissionais Liberais">
+<meta property="og:description" content="O único plano do mercado que combina Saúde + Seguro de Vida para profissionais liberais. Até 50% mais barato. Rede Einstein, Sírio-Libanês e Rede D'Or. Cotação gratuita em minutos.">
+<meta property="og:image" content="https://profissoes.vortexseguros.com/assets/sulamerica_logo.png">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Vortex Corretagem de Seguros">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SulAmérica Profissões | Plano de Saúde + Seguro de Vida">
+<meta name="twitter:description" content="Plano exclusivo para profissionais liberais. Até 50% mais barato. Cotação gratuita.">
+<meta name="twitter:image" content="https://profissoes.vortexseguros.com/assets/sulamerica_logo.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://profissoes.vortexseguros.com">
 
 <!-- SEO e Open Graph (Compartilhamento WhatsApp/Redes Sociais) -->
 <meta name="description" content="Plano de Saúde + Seguro de Vida para Profissionais Liberais com CNPJ. Redução de custos e acesso aos melhores hospitais do Brasil. Faça seu diagnóstico com a Vortex Corretagem.">
@@ -116,12 +138,13 @@
 
   /* EXTRAS */
   .extras { padding: 80px 0; background: var(--dark-2); }
-  .extras-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 48px; }
+  .extras-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
   .extra-card { background: var(--dark-3); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 28px; display: flex; gap: 20px; align-items: flex-start; transition: border-color 0.25s; }
   .extra-card:hover { border-color: rgba(232,87,42,0.3); }
   .extra-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(232,87,42,0.1); color: var(--orange); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 24px; }
   .extra-icon svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
   .extra-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .extra-card-wide { grid-column: span 2; }
   .extra-card p { font-size: 13px; color: var(--gray); line-height: 1.5; }
 
   /* GYMPASS */
@@ -155,25 +178,54 @@
   /* FOOTER */
   footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 40px 0; background: var(--dark-2); }
   .footer-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
-  .footer-left { display: flex; flex-direction: column; gap: 12px; }
-  .footer-vortex-logo { height: 22px; width: auto; mix-blend-mode: screen; opacity: 0.9; }
-  .footer-corretora { font-size: 11px; color: rgba(255,255,255,0.35); }
-  .footer-corretora span { color: rgba(255,255,255,0.55); font-weight: 600; }
+  .footer-left { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .footer-vortex-logo { height: 38px; width: auto; mix-blend-mode: screen; }
+  .footer-corretora { font-size: 12px; color: rgba(255,255,255,0.45); text-align: center; line-height: 1.8; }
+  .footer-corretora span { color: rgba(255,255,255,0.7); font-weight: 700; }
   .footer-divider { width: 1px; background: rgba(255,255,255,0.06); align-self: stretch; }
   .footer-right { flex: 1; min-width: 280px; }
   .footer-disclaimer { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; margin-bottom: 10px; text-transform: uppercase; }
   .footer-legal { font-size: 11px; color: rgba(255,255,255,0.22); line-height: 1.7; }
 
   /* ANIMATIONS */
+
+  /* PLANOS */
+  .planos { padding: 100px 0; background: var(--dark); }
+  .planos-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--dark-4); border-radius: 20px; overflow: hidden; margin-top: 48px; }
+  .plano-card { background: var(--dark-2); padding: 36px 28px; display: flex; flex-direction: column; gap: 0; position: relative; transition: background 0.25s; }
+  .plano-card:hover { background: var(--dark-3); }
+  .plano-card.destaque { background: var(--dark-3); }
+  .plano-card.destaque::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--orange); }
+  .plano-badge { display: inline-block; background: var(--orange); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; margin-bottom: 12px; width: fit-content; }
+  .plano-nome { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; line-height: 1.2; margin-bottom: 8px; }
+  .plano-desc { font-size: 13px; color: var(--gray); line-height: 1.5; margin-bottom: 24px; min-height: 60px; }
+  .plano-rede { font-size: 12px; font-weight: 700; color: var(--orange); margin-bottom: 20px; }
+  .plano-features { list-style: none; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 20px; }
+  .plano-features li { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: var(--gray-light); line-height: 1.4; }
+  .plano-features li .dot { width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; font-size: 9px; }
+  .plano-features li .dot.ok { background: rgba(232,87,42,0.15); color: var(--orange); }
+  .plano-features li .dot.no { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.2); }
+  .plano-features li.off { opacity: 0.35; }
+  .plano-cta { margin-top: auto; padding-top: 24px; }
+  .plano-btn { display: block; text-align: center; background: rgba(232,87,42,0.1); border: 1px solid rgba(232,87,42,0.3); color: var(--orange); font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 700; padding: 12px 20px; border-radius: 100px; text-decoration: none; transition: all 0.25s; }
+  .plano-btn:hover { background: var(--orange); color: #fff; }
+  @media (max-width: 580px) { .planos-grid { grid-template-columns: 1fr; } }
+
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
   /* RESPONSIVE */
-  @media (max-width: 900px) { .dif-grid { grid-template-columns: 1fr; } }
-  @media (max-width: 900px) { .profissoes-grid { grid-template-columns: repeat(3, 1fr); } .hospitais-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 900px) {
+    .planos-grid { grid-template-columns: repeat(2, 1fr); }
+    .dif-grid { grid-template-columns: 1fr; }
+    .profissoes-grid { grid-template-columns: repeat(3, 1fr); }
+    .hospitais-grid { grid-template-columns: repeat(3, 1fr); }
+    .extras-grid { grid-template-columns: repeat(2, 1fr); }
+    .extra-card-wide { grid-column: span 2; }
+  }
   @media (max-width: 768px) { nav .btn-whatsapp { display: none; } nav .container { justify-content: center; } .produto-cards { grid-template-columns: 1fr; } .contrat-box { flex-direction: column; align-items: flex-start; } .gympass-block { flex-direction: column; padding: 36px 28px; } .profissoes-grid { grid-template-columns: repeat(2, 1fr); } .hospitais-grid { grid-template-columns: repeat(2, 1fr); } .footer-inner { flex-direction: column; } .footer-divider { display: none; } }
-  @media (max-width: 640px) { .extras-grid { grid-template-columns: 1fr; } .hero-ctas { flex-direction: column; align-items: flex-start; } }
+  @media (max-width: 640px) { .extras-grid { grid-template-columns: 1fr; } .extra-card-wide { grid-column: span 1; } .hero-ctas { flex-direction: column; align-items: flex-start; } }
 </style>
 </head>
 <body>
@@ -251,26 +303,138 @@
         <div class="sub-label">Hospitalar com Obstetrícia</div>
         <ul class="feature-list">
           <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Urgência e emergência</strong> com cobertura completa</span></li>
-          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Cirurgias e internações</strong> hospitalares</span></li>
+          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Cirurgias, internações</strong> e parto em apartamento individual</span></li>
+          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Pré-Natal completo</strong> — consultas, exames e acompanhamento gestacional</span></li>
           <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Check-up anual</strong> preventivo</span></li>
+          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Vacinas</strong> do calendário OMS, viajante e extracalendário*</span></li>
           <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Descontos exclusivos</strong> em laboratórios via SulaMais</span></li>
           <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span>Reembolso em pronto-socorro e honorários médicos</span></li>
         </ul>
         <div class="mais-tag"><strong>Planos:</strong> Prestige · Executivo · Especial Mais · Especial 100</div>
+        <div class="mais-tag" style="margin-top:8px; font-size:11px; color:rgba(255,255,255,0.3);">* Cobertura de vacinas disponível a partir do plano Prestige.</div>
       </div>
       <div class="produto-card reveal">
         <div class="produto-card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <h3>Seguro de Vida</h3>
         <div class="sub-label">Benefício adicional incluso</div>
         <ul class="feature-list">
-          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Acessibilidade Física (ACF)</strong> em caso de invalidez</span></li>
-          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Diárias por incapacidade</strong> temporária (DIT)</span></li>
+          <strong>Morte Qualquer Causa</strong> — R$ 500.000*</span></li>
+          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Morte Acidental</strong> — R$ 500.000*</span></li>
+          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Invalidez Permanente (IPA)</strong> — até R$ 1.000.000*</span></li>
+          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Acessibilidade Física (ACF)</strong> — R$ 250.000*</span></li>
+          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Diária por Incapacidade (DIT)</strong> — R$ 250/dia*</span></li>
           <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Assistência pessoal</strong> e funeral familiar</span></li>
-          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span>Proteção financeira para você e sua família</span></li>
         </ul>
         <div class="mais-tag"><span>Quem cuida merece ser <strong>muito bem cuidado.</strong></span></div>
+        <div class="mais-tag" style="margin-top:8px; font-size:11px; color:rgba(255,255,255,0.3);">* Valores sujeitos ao plano contratado. Consulte condições gerais.</div>
       </div>
     </div>
+  </div>
+</section>
+
+
+<!-- PLANOS -->
+<section class="planos">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Planos disponíveis</span>
+      <h2>Escolha o plano<br>ideal para você.</h2>
+      <p>Todos com Seguro de Vida incluso, apartamento individual e rede nacional. Consulte disponibilidade por região.</p>
+    </div>
+    <div class="planos-grid">
+
+      <!-- Especial 100 -->
+      <div class="plano-card reveal">
+        <div class="plano-nome">Especial 100</div>
+        <p class="plano-desc">Ideal para quem busca conforto com rede robusta e capilarizada para assistência completa.</p>
+        <div class="plano-rede">+ 1.219 hospitais credenciados</div>
+        <ul class="plano-features">
+          <li><span class="dot ok">✓</span>Apartamento individual</li>
+          <li><span class="dot ok">✓</span>Urgência e emergência</li>
+          <li><span class="dot ok">✓</span>Seguro de Vida e Assistências</li>
+          <li><span class="dot ok">✓</span>Saúde na Tela</li>
+          <li><span class="dot ok">✓</span>Assistência Viagem Nacional</li>
+          <li><span class="dot ok">✓</span>Seguro Viagem Internacional</li>
+          <li><span class="dot ok">✓</span>Coparticipação opcional</li>
+          <li class="off"><span class="dot no">✗</span>Vacinas OMS/viajante</li>
+          <li class="off"><span class="dot no">✗</span>Check-up anual</li>
+          <li class="off"><span class="dot no">✗</span>Concierge / Sala VIP</li>
+        </ul>
+        <div class="plano-cta">
+          <a href="https://wa.me/552137987776?text=%22Quero%20uma%20cota%C3%A7%C3%A3o%20de%20plano%20de%20sa%C3%BAde%20empresarial%22" class="plano-btn" target="_blank" rel="noopener">Quero uma cotação</a>
+        </div>
+      </div>
+
+      <!-- Especial Mais -->
+      <div class="plano-card reveal">
+        <div class="plano-nome">Especial Mais</div>
+        <p class="plano-desc">Conforto e exclusividade com acesso ao Hospital Vila Nova Star e atenção total em cada etapa.</p>
+        <div class="plano-rede">+ 1.221 hospitais · Rede Star</div>
+        <ul class="plano-features">
+          <li><span class="dot ok">✓</span>Apartamento individual</li>
+          <li><span class="dot ok">✓</span>Urgência e emergência</li>
+          <li><span class="dot ok">✓</span>Seguro de Vida e Assistências</li>
+          <li><span class="dot ok">✓</span>Saúde na Tela</li>
+          <li><span class="dot ok">✓</span>Assistência Viagem Nacional</li>
+          <li><span class="dot ok">✓</span>Seguro Viagem Internacional</li>
+          <li><span class="dot ok">✓</span>Coparticipação opcional</li>
+          <li><span class="dot ok">✓</span>Vacinas OMS e viajante</li>
+          <li><span class="dot ok">✓</span>Check-up anual — titular</li>
+          <li><span class="dot ok">✓</span>Concierge SulAmérica</li>
+        </ul>
+        <div class="plano-cta">
+          <a href="https://wa.me/552137987776?text=%22Quero%20uma%20cota%C3%A7%C3%A3o%20de%20plano%20de%20sa%C3%BAde%20empresarial%22" class="plano-btn" target="_blank" rel="noopener">Quero uma cotação</a>
+        </div>
+      </div>
+
+      <!-- Executivo -->
+      <div class="plano-card destaque reveal">
+        <div class="plano-badge">Mais escolhido</div>
+        <div class="plano-nome">Executivo</div>
+        <p class="plano-desc">Rede diferenciada e de alto nível com Einstein, Sírio-Libanês e Rede Star inclusos.</p>
+        <div class="plano-rede">+ 1.235 hospitais · Einstein · Sírio-Libanês</div>
+        <ul class="plano-features">
+          <li><span class="dot ok">✓</span>Apartamento individual</li>
+          <li><span class="dot ok">✓</span>Urgência e emergência</li>
+          <li><span class="dot ok">✓</span>Seguro de Vida e Assistências</li>
+          <li><span class="dot ok">✓</span>Saúde na Tela</li>
+          <li><span class="dot ok">✓</span>Assistência Viagem Nacional</li>
+          <li><span class="dot ok">✓</span>Seguro Viagem Internacional</li>
+          <li><span class="dot ok">✓</span>Coparticipação opcional</li>
+          <li><span class="dot ok">✓</span>Vacinas OMS, viajante e extracalendário</li>
+          <li><span class="dot ok">✓</span>Check-up anual — titular</li>
+          <li><span class="dot ok">✓</span>Concierge + Sala VIP</li>
+        </ul>
+        <div class="plano-cta">
+          <a href="https://wa.me/552137987776?text=%22Quero%20uma%20cota%C3%A7%C3%A3o%20de%20plano%20de%20sa%C3%BAde%20empresarial%22" class="plano-btn" target="_blank" rel="noopener">Quero uma cotação</a>
+        </div>
+      </div>
+
+      <!-- Prestige -->
+      <div class="plano-card reveal">
+        <div class="plano-badge" style="background: #1a1a1d; border: 1px solid var(--orange);">Premium</div>
+        <div class="plano-nome">Prestige</div>
+        <p class="plano-desc">Universo de serviços de alto padrão para quem valoriza uma experiência única em saúde.</p>
+        <div class="plano-rede">+ 1.235 hospitais · Einstein · Sírio-Libanês</div>
+        <ul class="plano-features">
+          <li><span class="dot ok">✓</span>Apartamento individual</li>
+          <li><span class="dot ok">✓</span>Urgência e emergência</li>
+          <li><span class="dot ok">✓</span>Seguro de Vida e Assistências</li>
+          <li><span class="dot ok">✓</span>Saúde na Tela</li>
+          <li><span class="dot ok">✓</span>Assistência Viagem Nacional</li>
+          <li><span class="dot ok">✓</span>Seguro Viagem Internacional</li>
+          <li><span class="dot ok">✓</span>Coparticipação opcional</li>
+          <li><span class="dot ok">✓</span>Vacinas OMS, viajante e extracalendário</li>
+          <li><span class="dot ok">✓</span>Check-up anual — titular e dependentes</li>
+          <li><span class="dot ok">✓</span>Concierge exclusivo + Sala VIP</li>
+        </ul>
+        <div class="plano-cta">
+          <a href="https://wa.me/552137987776?text=%22Quero%20uma%20cota%C3%A7%C3%A3o%20de%20plano%20de%20sa%C3%BAde%20empresarial%22" class="plano-btn" target="_blank" rel="noopener">Quero uma cotação</a>
+        </div>
+      </div>
+
+    </div>
+    <p class="rede-note" style="margin-top:20px;">* Consulte disponibilidade de rede por região. Características sujeitas a alteração conforme plano contratado.</p>
   </div>
 </section>
 
@@ -342,6 +506,22 @@
         <div class="extra-icon">💊</div>
         <div><h4>Desconto em Farmácias</h4><p>Mais de 25.000 farmácias parceiras com descontos em medicamentos e itens de saúde.</p></div>
       </div>
+      <div class="extra-card reveal">
+        <div class="extra-icon">🏠</div>
+        <div><h4>Coleta Domiciliar</h4><p>Exames laboratoriais coletados na sua casa via LabIn. Praticidade para quem tem a agenda cheia.</p></div>
+      </div>
+      <div class="extra-card reveal">
+        <div class="extra-icon">📲</div>
+        <div><h4>App SulAmérica Saúde</h4><p>Consulte a rede credenciada, solicite reembolso e acesse serviços 100% pelo celular.</p></div>
+      </div>
+      <div class="extra-card reveal">
+        <div class="extra-icon">⭐</div>
+        <div><h4>SulAmérica Concierge</h4><p>Exclusivo do plano Prestige: sala VIP no Einstein, atendimento humanizado e suporte personalizado 24h.</p></div>
+      </div>
+      <div class="extra-card reveal extra-card-wide">
+        <div class="extra-icon">🏃</div>
+        <div><h4>Saúde Ativa</h4><p>Programa de gestão integrada da saúde com iniciativas focadas em qualidade de vida e prevenção para profissionais que cuidam dos outros.</p></div>
+      </div>
     </div>
     <div class="gympass-block reveal">
       <div class="gympass-text">
@@ -382,7 +562,7 @@
 <section class="final-cta">
   <div class="container">
     <h2>Você cuida dos outros.<br><em style="color:var(--orange); font-style:italic;">Quem cuida de você?</em></h2>
-    <p>Fale agora com um corretor e receba seu diagnóstico gratuito em minutos.</p>
+    <p>Fale agora com um consultor e receba sua cotação gratuita em minutos.</p>
     <a href="https://wa.me/552137987776?text=%22Quero%20uma%20cota%C3%A7%C3%A3o%20de%20plano%20de%20sa%C3%BAde%20empresarial%22" class="btn-whatsapp" target="_blank" rel="noopener">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Falar no WhatsApp agora

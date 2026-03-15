@@ -25,12 +25,12 @@
   .btn-whatsapp:hover::before { opacity: 1; }
 
   /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 0; background: #ffffff; border-bottom: 1px solid rgba(0,0,0,0.08); box-shadow: 0 2px 16px rgba(0,0,0,0.12); }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 0; background: rgba(17,17,19,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); }
   nav .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .nav-brand { display: flex; align-items: center; gap: 12px; }
   .nav-sula-wrap { background: #ffffff; border-radius: 8px; padding: 5px 12px; display: flex; align-items: center; }
   .nav-sula-logo { height: 26px; width: auto; display: block; }
-  .nav-divider { width: 1px; height: 28px; background: rgba(0,0,0,0.15); }
+  .nav-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.15); }
   .nav-profissoes { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: var(--orange); text-transform: uppercase; }
 
   /* HERO */
@@ -143,10 +143,10 @@
   /* FOOTER */
   footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 40px 0; background: var(--dark-2); }
   .footer-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
-  .footer-left { display: flex; flex-direction: column; gap: 16px; }
-  .footer-vortex-logo { height: 40px; width: auto; opacity: 0.9; }
-  .footer-corretora { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.8; }
-  .footer-corretora span { color: rgba(255,255,255,0.7); font-weight: 700; }
+  .footer-left { display: flex; flex-direction: column; gap: 12px; }
+  .footer-vortex-logo { height: 34px; width: auto; mix-blend-mode: screen; }
+  .footer-corretora { font-size: 11px; color: rgba(255,255,255,0.35); }
+  .footer-corretora span { color: rgba(255,255,255,0.55); font-weight: 600; }
   .footer-divider { width: 1px; background: rgba(255,255,255,0.06); align-self: stretch; }
   .footer-right { flex: 1; min-width: 280px; }
   .footer-disclaimer { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; margin-bottom: 10px; text-transform: uppercase; }
@@ -160,7 +160,7 @@
   /* RESPONSIVE */
   @media (max-width: 900px) { .dif-grid { grid-template-columns: 1fr; } }
   @media (max-width: 900px) { .profissoes-grid { grid-template-columns: repeat(3, 1fr); } .hospitais-grid { grid-template-columns: repeat(3, 1fr); } }
-  @media (max-width: 768px) { nav .container { justify-content: center; } nav .btn-whatsapp { display: none; } .produto-cards { grid-template-columns: 1fr; } .contrat-box { flex-direction: column; align-items: flex-start; } .gympass-block { flex-direction: column; padding: 36px 28px; } .profissoes-grid { grid-template-columns: repeat(2, 1fr); } .hospitais-grid { grid-template-columns: repeat(2, 1fr); } .footer-inner { flex-direction: column; } .footer-divider { display: none; } }
+  @media (max-width: 768px) { nav .btn-whatsapp { display: none; } .produto-cards { grid-template-columns: 1fr; } .contrat-box { flex-direction: column; align-items: flex-start; } .gympass-block { flex-direction: column; padding: 36px 28px; } .profissoes-grid { grid-template-columns: repeat(2, 1fr); } .hospitais-grid { grid-template-columns: repeat(2, 1fr); } .footer-inner { flex-direction: column; } .footer-divider { display: none; } }
   @media (max-width: 640px) { .extras-grid { grid-template-columns: 1fr; } .hero-ctas { flex-direction: column; align-items: flex-start; } }
 </style>
 </head>
@@ -386,9 +386,8 @@
       <div class="footer-left">
         <img src="assets/vortex_logo.png" alt="Vortex Corretagem de Seguros" class="footer-vortex-logo">
         <div class="footer-corretora">
-          <div><span>CNPJ:</span> 42.974.952/0001-56</div>
-          <div><span>SUSEP:</span> 212124642</div>
-          <div><span>Corretora Autorizada SulAmérica</span></div>
+          <div><span>CNPJ:</span> 42.974.952/0001-56 &nbsp;|&nbsp; <span>SUSEP:</span> 212124642</div>
+          <div style="margin-top:4px;"><span>Corretora Autorizada SulAmérica</span></div>
         </div>
       </div>
       <div class="footer-divider"></div>

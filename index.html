@@ -130,21 +130,74 @@
 
   /* REDE */
   .rede { padding: 100px 0; }
-  .hospitais-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; background: var(--dark-4); border-radius: 16px; overflow: hidden; margin-top: 48px; }
-  .hospital-item { background: var(--dark-3); padding: 28px 20px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: var(--gray); text-align: center; line-height: 1.4; transition: all 0.2s; min-height: 80px; }
-  .hospital-item:hover { background: var(--dark-4); color: var(--white); }
-  .hospital-item.premium { color: var(--gray-light); font-weight: 700; }
+  .hospitais-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 48px;
+  }
+  .hospital-card {
+    background: var(--dark-3);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+    transition: all 0.25s;
+    min-height: 110px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hospital-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    opacity: 0.8;
+  }
+  .hospital-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,0.15);
+    background: var(--dark-4);
+  }
+  .hospital-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .hospital-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+  }
+  .hospital-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    color: var(--gray);
+  }
   .rede-note { text-align: center; margin-top: 20px; font-size: 13px; color: var(--gray); }
+  @media (max-width: 900px) { .hospitais-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 580px) { .hospitais-grid { grid-template-columns: repeat(2, 1fr); } }
 
   /* EXTRAS */
   .extras { padding: 80px 0; background: var(--dark-2); }
-  .extras-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+  .extras-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 48px; }
   .extra-card { background: var(--dark-3); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 28px; display: flex; gap: 20px; align-items: flex-start; transition: border-color 0.25s; }
   .extra-card:hover { border-color: rgba(232,87,42,0.3); }
   .extra-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(232,87,42,0.1); color: var(--orange); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 24px; }
   .extra-icon svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
   .extra-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-  .extra-card-wide { grid-column: span 2; }
+
   .extra-card p { font-size: 13px; color: var(--gray); line-height: 1.5; }
 
   /* GYMPASS */
@@ -178,9 +231,9 @@
   /* FOOTER */
   footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 40px 0; background: var(--dark-2); }
   .footer-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
-  .footer-left { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .footer-left { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
   .footer-vortex-logo { height: 38px; width: auto; mix-blend-mode: screen; }
-  .footer-corretora { font-size: 12px; color: rgba(255,255,255,0.45); text-align: center; line-height: 1.8; }
+  .footer-corretora { font-size: 12px; color: rgba(255,255,255,0.45); text-align: left; line-height: 1.8; }
   .footer-corretora span { color: rgba(255,255,255,0.7); font-weight: 700; }
   .footer-divider { width: 1px; background: rgba(255,255,255,0.06); align-self: stretch; }
   .footer-right { flex: 1; min-width: 280px; }
@@ -218,14 +271,15 @@
   /* RESPONSIVE */
   @media (max-width: 900px) {
     .planos-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .planos-grid { grid-template-columns: 1fr; }
     .dif-grid { grid-template-columns: 1fr; }
     .profissoes-grid { grid-template-columns: repeat(3, 1fr); }
-    .hospitais-grid { grid-template-columns: repeat(3, 1fr); }
     .extras-grid { grid-template-columns: repeat(2, 1fr); }
-    .extra-card-wide { grid-column: span 2; }
   }
-  @media (max-width: 768px) { nav .btn-whatsapp { display: none; } nav .container { justify-content: center; } .produto-cards { grid-template-columns: 1fr; } .contrat-box { flex-direction: column; align-items: flex-start; } .gympass-block { flex-direction: column; padding: 36px 28px; } .profissoes-grid { grid-template-columns: repeat(2, 1fr); } .hospitais-grid { grid-template-columns: repeat(2, 1fr); } .footer-inner { flex-direction: column; } .footer-divider { display: none; } }
-  @media (max-width: 640px) { .extras-grid { grid-template-columns: 1fr; } .extra-card-wide { grid-column: span 1; } .hero-ctas { flex-direction: column; align-items: flex-start; } }
+  @media (max-width: 768px) { nav .btn-whatsapp { display: none; } nav .container { justify-content: center; }  .produto-cards { grid-template-columns: 1fr; } .contrat-box { flex-direction: column; align-items: flex-start; } .gympass-block { flex-direction: column; padding: 36px 28px; } .profissoes-grid { grid-template-columns: repeat(2, 1fr); } .hospitais-grid { grid-template-columns: repeat(2, 1fr); } .footer-inner { flex-direction: column; } .footer-divider { display: none; } }
+  @media (max-width: 640px) { .extras-grid { grid-template-columns: 1fr; } .hero-ctas { flex-direction: column; align-items: flex-start; } }
 </style>
 </head>
 <body>
@@ -308,6 +362,7 @@
           <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Check-up anual</strong> preventivo</span></li>
           <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Vacinas</strong> do calendário OMS, viajante e extracalendário*</span></li>
           <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Descontos exclusivos</strong> em laboratórios via SulaMais</span></li>
+          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Cobertura ambulatorial</strong> para continuidade de tratamento pós-internação</span></li>
           <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span>Reembolso em pronto-socorro e honorários médicos</span></li>
         </ul>
         <div class="mais-tag"><strong>Planos:</strong> Prestige · Executivo · Especial Mais · Especial 100</div>
@@ -318,15 +373,16 @@
         <h3>Seguro de Vida</h3>
         <div class="sub-label">Benefício adicional incluso</div>
         <ul class="feature-list">
-          <strong>Morte Qualquer Causa</strong> — R$ 500.000*</span></li>
-          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Morte Acidental</strong> — R$ 500.000*</span></li>
+          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Morte Qualquer Causa</strong> — de R$ 100k a R$ 500k*</span></li>
+          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Morte Acidental</strong> — de R$ 100k a R$ 500k*</span></li>
           <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Invalidez Permanente (IPA)</strong> — até R$ 1.000.000*</span></li>
-          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Acessibilidade Física (ACF)</strong> — R$ 250.000*</span></li>
+          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Acessibilidade Física (ACF)</strong> — até R$ 250.000*</span></li>
           <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Diária por Incapacidade (DIT)</strong> — R$ 250/dia*</span></li>
-          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Assistência pessoal</strong> e funeral familiar</span></li>
+          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Funeral Familiar</strong> — de R$ 5k a R$ 10k*</span></li>
+          <li><span class="check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span><span><strong>Assistência Pessoal</strong> inclusa em todos os planos</span></li>
         </ul>
         <div class="mais-tag"><span>Quem cuida merece ser <strong>muito bem cuidado.</strong></span></div>
-        <div class="mais-tag" style="margin-top:8px; font-size:11px; color:rgba(255,255,255,0.3);">* Valores sujeitos ao plano contratado. Consulte condições gerais.</div>
+        <div class="mais-tag" style="margin-top:8px; font-size:11px; color:rgba(255,255,255,0.3);">* Valores variam por plano: Especial 100/Mais, Executivo e Prestige. Consulte condições gerais.</div>
       </div>
     </div>
   </div>
@@ -447,7 +503,7 @@
     </div>
     <div class="dif-grid">
       <div class="dif-card reveal"><div class="dif-number">50<span>%</span></div><h4>Mais barato que um plano convencional</h4><p>Comparado ao plano Ambulatorial e Hospitalar com Obstetrícia equivalente no mercado.</p></div>
-      <div class="dif-card reveal"><div class="dif-number">45<span>%</span></div><h4>De desconto em laboratórios e diagnósticos</h4><p>Rede D'Or, Richet, Sabin, Hermes Pardini, Grupo Fleury, Dasa e muito mais via SulaMais.</p></div>
+      <div class="dif-card reveal"><div class="dif-number">40<span>%</span></div><h4>De desconto em laboratórios e diagnósticos</h4><p>Rede D'Or, Richet, Sabin, Hermes Pardini, Grupo Fleury, Dasa e muito mais via SulaMais.</p></div>
       <div class="dif-card reveal"><div class="dif-number">130<span>anos</span></div><h4>De história e solidez da SulAmérica</h4><p>Uma das maiores seguradoras do Brasil. Comercialização nacional com atendimento local.</p></div>
     </div>
   </div>
@@ -462,23 +518,99 @@
       <p>Sua saúde merece uma rede de excelência. Consulte a rede completa com nossos consultores.</p>
     </div>
     <div class="hospitais-grid reveal">
-      <div class="hospital-item premium">Hospital Albert Einstein</div>
-      <div class="hospital-item premium">Sírio-Libanês</div>
-      <div class="hospital-item premium">Rede D'Or</div>
-      <div class="hospital-item premium">Copa D'Or</div>
-      <div class="hospital-item">A.C.Camargo Cancer Center</div>
-      <div class="hospital-item">Hospital Português</div>
-      <div class="hospital-item">HCOR</div>
-      <div class="hospital-item">Pró-Cardíaco Americas</div>
-      <div class="hospital-item">Hospital Aliança</div>
-      <div class="hospital-item">Oswaldo Cruz</div>
-      <div class="hospital-item">HNSN</div>
-      <div class="hospital-item">Esperança Recife</div>
-      <div class="hospital-item">DF Star</div>
-      <div class="hospital-item">Star</div>
-      <div class="hospital-item" style="color:var(--orange); font-style:italic;">E muito mais...</div>
+
+      <div class="hospital-card" style="border-color: rgba(27,58,107,0.4);">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#1B3A6B;"></div>
+        <div class="hospital-icon" style="background:rgba(27,58,107,0.15);">🏥</div>
+        <div><div class="hospital-name">Hospital Albert Einstein</div><div class="hospital-tag">São Paulo · SP</div></div>
+      </div>
+
+      <div class="hospital-card" style="border-color: rgba(0,48,135,0.4);">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#003087;"></div>
+        <div class="hospital-icon" style="background:rgba(0,48,135,0.15);">🏥</div>
+        <div><div class="hospital-name">Sírio-Libanês</div><div class="hospital-tag">São Paulo · SP</div></div>
+      </div>
+
+      <div class="hospital-card" style="border-color: rgba(200,151,43,0.4);">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#C8972B;"></div>
+        <div class="hospital-icon" style="background:rgba(200,151,43,0.15);">🏥</div>
+        <div><div class="hospital-name">Rede D'Or</div><div class="hospital-tag">Nacional</div></div>
+      </div>
+
+      <div class="hospital-card" style="border-color: rgba(200,151,43,0.4);">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#C8972B;"></div>
+        <div class="hospital-icon" style="background:rgba(200,151,43,0.15);">🏥</div>
+        <div><div class="hospital-name">Copa D'Or</div><div class="hospital-tag">Rio de Janeiro · RJ</div></div>
+      </div>
+
+      <div class="hospital-card" style="border-color: rgba(200,151,43,0.4);">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#C8972B;"></div>
+        <div class="hospital-icon" style="background:rgba(200,151,43,0.15);">⭐</div>
+        <div><div class="hospital-name">Vila Nova Star</div><div class="hospital-tag">São Paulo · SP</div></div>
+      </div>
+
+      <div class="hospital-card" style="border-color: rgba(0,105,62,0.4);">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#00693E;"></div>
+        <div class="hospital-icon" style="background:rgba(0,105,62,0.15);">🔬</div>
+        <div><div class="hospital-name">A.C.Camargo Cancer Center</div><div class="hospital-tag">São Paulo · SP</div></div>
+      </div>
+
+      <div class="hospital-card" style="border-color: rgba(196,18,48,0.4);">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#C41230;"></div>
+        <div class="hospital-icon" style="background:rgba(196,18,48,0.15);">❤️</div>
+        <div><div class="hospital-name">HCOR</div><div class="hospital-tag">São Paulo · SP</div></div>
+      </div>
+
+      <div class="hospital-card" style="border-color: rgba(196,18,48,0.4);">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#C41230;"></div>
+        <div class="hospital-icon" style="background:rgba(196,18,48,0.15);">❤️</div>
+        <div><div class="hospital-name">Pró-Cardíaco Americas</div><div class="hospital-tag">Rio de Janeiro · RJ</div></div>
+      </div>
+
+      <div class="hospital-card" style="border-color: rgba(0,48,135,0.4);">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#003087;"></div>
+        <div class="hospital-icon" style="background:rgba(0,48,135,0.15);">🏥</div>
+        <div><div class="hospital-name">Real Hospital Português</div><div class="hospital-tag">Recife · PE</div></div>
+      </div>
+
+      <div class="hospital-card" style="border-color: rgba(0,130,80,0.4);">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#008250;"></div>
+        <div class="hospital-icon" style="background:rgba(0,130,80,0.15);">🏥</div>
+        <div><div class="hospital-name">Oswaldo Cruz</div><div class="hospital-tag">São Paulo · SP</div></div>
+      </div>
+
+      <div class="hospital-card" style="border-color: rgba(0,48,135,0.4);">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#003087;"></div>
+        <div class="hospital-icon" style="background:rgba(0,48,135,0.15);">🏥</div>
+        <div><div class="hospital-name">Hospital Aliança</div><div class="hospital-tag">Salvador · BA</div></div>
+      </div>
+
+      <div class="hospital-card" style="border-color: rgba(0,48,135,0.4);">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#003087;"></div>
+        <div class="hospital-icon" style="background:rgba(0,48,135,0.15);">🏥</div>
+        <div><div class="hospital-name">Esperança Recife</div><div class="hospital-tag">Recife · PE</div></div>
+      </div>
+
+      <div class="hospital-card" style="border-color: rgba(200,151,43,0.4);">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#C8972B;"></div>
+        <div class="hospital-icon" style="background:rgba(200,151,43,0.15);">🏥</div>
+        <div><div class="hospital-name">DF Star</div><div class="hospital-tag">Brasília · DF · Rede D'Or</div></div>
+      </div>
+
+      <div class="hospital-card" style="border-color: rgba(0,48,135,0.4);">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#003087;"></div>
+        <div class="hospital-icon" style="background:rgba(0,48,135,0.15);">🏥</div>
+        <div><div class="hospital-name">HNSN</div><div class="hospital-tag">Natal · RN</div></div>
+      </div>
+
+      <div class="hospital-card" style="border-color: rgba(232,87,42,0.4);">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--orange);"></div>
+        <div class="hospital-icon" style="background:rgba(232,87,42,0.15);">➕</div>
+        <div><div class="hospital-name">+1.200 hospitais</div><div class="hospital-tag">em todo o Brasil</div></div>
+      </div>
+
     </div>
-    <p class="rede-note">* Consulte a rede de hospitais disponível para cada modalidade de plano.</p>
+    <p class="rede-note">* Consulte a rede disponível conforme o plano e região contratados.</p>
   </div>
 </section>
 
@@ -496,7 +628,15 @@
       </div>
       <div class="extra-card reveal">
         <div class="extra-icon">🔬</div>
-        <div><h4>Desconto em Laboratórios</h4><p>Até 45% de desconto nas principais redes: Fleury, Dasa, Sabin, Hermes Pardini e mais.</p></div>
+        <div><h4>Desconto em Laboratórios</h4><p>Até 40% de desconto nas principais redes: Fleury, Dasa, Sabin, Hermes Pardini e mais.</p></div>
+      </div>
+      <div class="extra-card reveal">
+        <div class="extra-icon">🩺</div>
+        <div><h4>Desconto em Consultas</h4><p>30% de desconto em consultas médicas particulares via rede SulaMais.</p></div>
+      </div>
+      <div class="extra-card reveal">
+        <div class="extra-icon">🌍</div>
+        <div><h4>Segunda Opinião Médica</h4><p>Consultoria médica internacional especializada para diagnósticos complexos — sem sair do Brasil.</p></div>
       </div>
       <div class="extra-card reveal">
         <div class="extra-icon">✈️</div>
@@ -518,7 +658,7 @@
         <div class="extra-icon">⭐</div>
         <div><h4>SulAmérica Concierge</h4><p>Exclusivo do plano Prestige: sala VIP no Einstein, atendimento humanizado e suporte personalizado 24h.</p></div>
       </div>
-      <div class="extra-card reveal extra-card-wide">
+      <div class="extra-card reveal">
         <div class="extra-icon">🏃</div>
         <div><h4>Saúde Ativa</h4><p>Programa de gestão integrada da saúde com iniciativas focadas em qualidade de vida e prevenção para profissionais que cuidam dos outros.</p></div>
       </div>

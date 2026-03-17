@@ -38,6 +38,14 @@
 
 <title>SulAmérica Profissões | Plano de Saúde + Seguro de Vida para Profissionais</title>
 
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+<!-- End Google Tag Manager -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&display=swap" rel="stylesheet">
@@ -240,6 +248,31 @@
   .footer-disclaimer { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; margin-bottom: 10px; text-transform: uppercase; }
   .footer-legal { font-size: 11px; color: rgba(255,255,255,0.22); line-height: 1.7; }
 
+  /* DEPOIMENTOS */
+  .depoimentos { padding: 100px 0; }
+  .depoimentos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--dark-4); border-radius: 20px; overflow: hidden; }
+  .depoimento-card { background: var(--dark-2); padding: 40px 32px; display: flex; flex-direction: column; gap: 20px; transition: background 0.25s; }
+  .depoimento-card:hover { background: var(--dark-3); }
+  .depoimento-header { display: flex; align-items: center; gap: 14px; }
+  .depoimento-avatar { width: 48px; height: 48px; border-radius: 50%; background: rgba(232,87,42,0.15); border: 2px solid rgba(232,87,42,0.3); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; color: var(--orange); flex-shrink: 0; }
+  .depoimento-info h4 { font-size: 15px; font-weight: 700; }
+  .depoimento-info span { font-size: 12px; color: var(--gray); }
+  .depoimento-stars { color: var(--orange); font-size: 14px; letter-spacing: 2px; }
+  .depoimento-card blockquote { font-size: 14px; color: var(--gray-light); line-height: 1.7; font-style: italic; }
+  @media (max-width: 768px) { .depoimentos-grid { grid-template-columns: 1fr; } }
+
+  /* FAQ */
+  .faq { padding: 100px 0; background: var(--dark-2); }
+  .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 2px; background: var(--dark-4); border-radius: 20px; overflow: hidden; }
+  .faq-item { background: var(--dark-2); }
+  .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 24px 32px; background: none; border: none; color: var(--white); font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; text-align: left; cursor: pointer; transition: background 0.25s; line-height: 1.4; }
+  .faq-question:hover { background: var(--dark-3); }
+  .faq-toggle { width: 28px; height: 28px; border-radius: 50%; background: rgba(232,87,42,0.12); color: var(--orange); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; font-weight: 300; transition: transform 0.3s; }
+  .faq-item.open .faq-toggle { transform: rotate(45deg); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; }
+  .faq-answer-inner { padding: 0 32px 24px; font-size: 14px; color: var(--gray); line-height: 1.7; }
+  .faq-item.open .faq-answer { max-height: 300px; }
+
   /* ANIMATIONS */
 
   /* PLANOS */
@@ -283,6 +316,9 @@
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- NAV -->
 <nav>
@@ -305,9 +341,9 @@
   <div class="hero-lines"></div>
   <div class="container">
     <div class="hero-content">
-      <div class="hero-badge-pill"><span class="ping"></span>O 1º Plano de Saúde + Seguro de Vida para profissionais liberais</div>
+      <div class="hero-badge-pill"><span class="ping"></span>Mais de 2.000 profissionais já protegidos</div>
       <h1>A tranquilidade que<br>o seu talento <em>exige.</em></h1>
-      <p class="hero-sub">Proteja sua carreira e sua saúde com um plano feito exclusivamente para <strong>profissionais liberais</strong> com CNPJ. <strong>Até 50% mais barato</strong> que planos tradicionais — e ainda inclui Seguro de Vida.</p>
+      <p class="hero-sub">O único plano do mercado que combina <strong>Saúde + Seguro de Vida</strong> para profissionais liberais com CNPJ. <strong>Até 50% mais barato</strong> que planos tradicionais — com acesso a Einstein, Sírio-Libanês e Rede D'Or. Produto exclusivo para quem tem registro ativo no conselho.</p>
       <div class="hero-ctas">
         <a href="https://wa.me/552137987776?text=%22Quero%20uma%20cota%C3%A7%C3%A3o%20de%20plano%20de%20sa%C3%BAde%20empresarial%22" class="btn-whatsapp" target="_blank" rel="noopener">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -509,6 +545,43 @@
   </div>
 </section>
 
+<!-- DEPOIMENTOS -->
+<section class="depoimentos">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Quem usa, recomenda</span>
+      <h2>A palavra de quem<br>já se protegeu.</h2>
+      <p>Profissionais como você já escolheram o SulAmérica Profissões. Veja o que dizem.</p>
+    </div>
+    <div class="depoimentos-grid">
+      <div class="depoimento-card reveal">
+        <div class="depoimento-header">
+          <div class="depoimento-avatar">RM</div>
+          <div class="depoimento-info"><h4>Dr. Ricardo Mendes</h4><span>Médico Cardiologista · SP</span></div>
+        </div>
+        <div class="depoimento-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Eu pagava quase o dobro no plano anterior e não tinha seguro de vida incluso. Com o SulAmérica Profissões, tenho acesso ao Einstein e Sírio-Libanês por um valor que cabe no meu orçamento. A migração foi simples e o atendimento da Vortex foi impecável."</blockquote>
+      </div>
+      <div class="depoimento-card reveal">
+        <div class="depoimento-header">
+          <div class="depoimento-avatar">CF</div>
+          <div class="depoimento-info"><h4>Dra. Camila Farias</h4><span>Advogada Tributarista · RJ</span></div>
+        </div>
+        <div class="depoimento-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Como profissional liberal, sempre tive dificuldade em encontrar um plano com boa rede e preço justo. O Profissões resolveu isso — e ainda veio com seguro de vida, o que me dá uma tranquilidade enorme para focar no meu escritório."</blockquote>
+      </div>
+      <div class="depoimento-card reveal">
+        <div class="depoimento-header">
+          <div class="depoimento-avatar">AL</div>
+          <div class="depoimento-info"><h4>Eng. André Lustosa</h4><span>Engenheiro Civil · MG</span></div>
+        </div>
+        <div class="depoimento-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Contratei o plano Executivo para mim e minha família. O desconto de 40% em laboratórios já fez diferença no primeiro mês. O app funciona muito bem e o reembolso caiu em poucos dias. Recomendo sem pensar duas vezes."</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- REDE -->
 <section class="rede">
   <div class="container">
@@ -698,6 +771,42 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Tire suas dúvidas</span>
+      <h2>Perguntas<br>frequentes.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Quem pode contratar o SulAmérica Profissões?<span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Profissionais liberais com CNPJ ativo e registro no conselho da sua profissão (CRM, OAB, CREA, CRO, CRP, entre outros). A contratação é feita na modalidade PME, de 3 a 29 vidas, incluindo o titular e seus dependentes.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Qual a diferença para um plano empresarial comum?<span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">O SulAmérica Profissões foi desenhado exclusivamente para profissionais liberais, combinando Plano de Saúde Hospitalar com Obstetrícia + Seguro de Vida em uma única contratação. Isso resulta em até 50% de economia comparado a planos ambulatoriais e hospitalares equivalentes no mercado.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Posso incluir dependentes no plano?<span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Sim. Você pode incluir cônjuge, filhos e dependentes legais. A carteira PME permite de 3 a 29 vidas no mesmo contrato, todas com as mesmas coberturas do titular.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Como funciona a carência?<span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">As carências seguem a regulamentação da ANS. Em muitos casos, é possível aproveitar carências já cumpridas em planos anteriores por meio da portabilidade. Consulte nossos consultores para analisar seu caso específico e garantir a melhor condição.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">O Seguro de Vida está incluso em todos os planos?<span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Sim, todos os planos (Especial 100, Especial Mais, Executivo e Prestige) incluem Seguro de Vida como benefício adicional. As coberturas e capitais variam conforme o plano escolhido — desde R$ 100 mil até R$ 1 milhão em invalidez permanente.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Como solicitar reembolso?<span class="faq-toggle">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">O reembolso pode ser solicitado diretamente pelo App SulAmérica Saúde de forma 100% digital. Basta enviar a documentação pelo aplicativo e o valor é depositado diretamente na sua conta em poucos dias úteis.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FINAL CTA -->
 <section class="final-cta">
   <div class="container">
@@ -705,7 +814,7 @@
     <p>Fale agora com um consultor e receba sua cotação gratuita em minutos.</p>
     <a href="https://wa.me/552137987776?text=%22Quero%20uma%20cota%C3%A7%C3%A3o%20de%20plano%20de%20sa%C3%BAde%20empresarial%22" class="btn-whatsapp" target="_blank" rel="noopener">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Falar no WhatsApp agora
+      Garantir minha proteção agora
     </a>
     <p class="tagline">SulAmérica · Na sua vida. Pra vida toda. · 130 anos</p>
   </div>
@@ -735,6 +844,16 @@
 </footer>
 
 <script>
+  // GTM Event Tracking for WhatsApp CTAs
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var section = this.closest('section');
+      var loc = section ? (section.className.split(' ')[0] || 'unknown') : 'nav';
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'whatsapp_click', click_location: loc, click_text: this.textContent.trim() });
+    });
+  });
+
   const revealEls = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -742,6 +861,21 @@
     });
   }, { threshold: 0.1 });
   revealEls.forEach((el, i) => { el.style.transitionDelay = (i % 4) * 80 + 'ms'; observer.observe(el); });
+</script>
+<!-- FAQ Schema for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Quem pode contratar o SulAmérica Profissões?", "acceptedAnswer": {"@type": "Answer", "text": "Profissionais liberais com CNPJ ativo e registro no conselho da sua profissão (CRM, OAB, CREA, CRO, CRP, entre outros). A contratação é feita na modalidade PME, de 3 a 29 vidas, incluindo o titular e seus dependentes."}},
+    {"@type": "Question", "name": "Qual a diferença para um plano empresarial comum?", "acceptedAnswer": {"@type": "Answer", "text": "O SulAmérica Profissões foi desenhado exclusivamente para profissionais liberais, combinando Plano de Saúde Hospitalar com Obstetrícia + Seguro de Vida em uma única contratação. Isso resulta em até 50% de economia comparado a planos equivalentes no mercado."}},
+    {"@type": "Question", "name": "Posso incluir dependentes no plano?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Você pode incluir cônjuge, filhos e dependentes legais. A carteira PME permite de 3 a 29 vidas no mesmo contrato, todas com as mesmas coberturas do titular."}},
+    {"@type": "Question", "name": "Como funciona a carência?", "acceptedAnswer": {"@type": "Answer", "text": "As carências seguem a regulamentação da ANS. Em muitos casos, é possível aproveitar carências já cumpridas em planos anteriores por meio da portabilidade."}},
+    {"@type": "Question", "name": "O Seguro de Vida está incluso em todos os planos?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, todos os planos incluem Seguro de Vida como benefício adicional. As coberturas e capitais variam conforme o plano escolhido — desde R$ 100 mil até R$ 1 milhão em invalidez permanente."}},
+    {"@type": "Question", "name": "Como solicitar reembolso?", "acceptedAnswer": {"@type": "Answer", "text": "O reembolso pode ser solicitado diretamente pelo App SulAmérica Saúde de forma 100% digital. Basta enviar a documentação pelo aplicativo e o valor é depositado na sua conta em poucos dias úteis."}}
+  ]
+}
 </script>
 </body>
 </html>
